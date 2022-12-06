@@ -1,6 +1,8 @@
 <?php
 
-$mysqli = new mysqli('localhost', 'root', '', 'moduleconnexion');
+// $mysqli = new mysqli('localhost', 'root', '', 'moduleconnexion');
+$mysqli = new mysqli('localhost:3306', 'yassine', 'yassine123', 'mohammed-yassine-dabboussi_moduleconnexion');
+
 session_start();
 
 ?>
@@ -25,7 +27,7 @@ session_start();
         <div class="hDroite">
             <div class="bouton_header"><a href="index.php" >Accueil</a></div>
             <div class="bouton_header"><a href="inscription.php" >Inscription</a></div>
-            <div class="bouton_header"><a href="connexion" >Connexion</a></div>
+            <div class="bouton_header"><a href="connexion.php" >Connexion</a></div>
         </div>
     </header>
 
@@ -77,7 +79,6 @@ session_start();
 
                                 $request = $mysqli -> query('SELECT COUNT(*) FROM `utilisateurs` WHERE `login`="'.$login.'"');
                                 $result_fetch_array = $request -> fetch_array();
-                                var_dump($result_fetch_array);
                                 
                                 
                                 //vérifier si l'identifiant existe déja
@@ -85,7 +86,8 @@ session_start();
                                     //   requête pour ajouter les données entré par l'utilisateur à la base des données  
                                      $request = $mysqli -> query("INSERT INTO `utilisateurs`(`id`, `login`, `prenom`, `nom`, `password`) VALUES (NULL,'$login','$nom','$prenom','$password1')");
                                      echo "<p style='color:rgb(0, 240, 44);'>Félicitations, vous êtes bien inscrit !</p>";
-                                   
+                                     echo "<h2><a a href='connexion.php'>&#10148;Connectez-vous:</a></h2>"; 
+
                                  }else{
                                         
                                      echo "<p style='color:rgb(160, 0, 0);'>L'idetifiant existe déja !</p>";

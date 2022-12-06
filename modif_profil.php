@@ -1,6 +1,7 @@
 <?php
 
-$mysqli = new mysqli('localhost', 'root', '', 'moduleconnexion');
+// $mysqli = new mysqli('localhost', 'root', '', 'moduleconnexion');
+$mysqli = new mysqli('localhost:3306', 'yassine', 'yassine123', 'mohammed-yassine-dabboussi_moduleconnexion');
 session_start();
 
 ?>
@@ -17,34 +18,34 @@ session_start();
 </head>
 
 
-  
+
     <header>
         <div class="hGauche">
             <div class="bouton_header">Module connexion | Mohammed Yassine Dabboussi</div>
         </div>
 
         <div class="hDroite">
-            
+
             <div class="bouton_header"><a href="profil.php" ><?php foreach ($_SESSION as $key => $value) {
                                                          echo $_SESSION['user'][0] ;
                                                          } ?></a></div>
             <div class="bouton_header"><form action="" method="post"><input type="submit" value="Deconnexion" name="deconnexion"></form></div>
-            <?php     if (isset($_POST['deconnexion'])) {   
-                        session_destroy(); 
+            <?php     if (isset($_POST['deconnexion'])) {
+                        session_destroy();
                         header('Location: index.php');
                       }?>
         </div>
     </header>
 
     <body>
-        
+
         <div class="div_body">
-            <div class="div_milieu"> 
+            <div class="div_milieu">
             <form action="" method="post">
                     <h1>Modifiez votre profil</h1>
 
                     <table>
-                        
+
                         <tr>
                             <td>Nom</td>
                             <td><input type="text" name="nom"  placeholder="Entrez votre nom !" size="25"/></td>
@@ -95,8 +96,8 @@ session_start();
                                 echo "<p style='color:rgb(160, 0, 0);'>Les mots de passes ne sont pas identiques</p>";
                             }
                         }
-                        
-                        
+
+
                         if($modification === 1){
                             echo "<p style='color:rgb(0, 240, 44);'>Vos données ont été mis à jour !</p>";
 
@@ -105,11 +106,11 @@ session_start();
                 ?>
             </div>
         </div>
-    </body> 
+    </body>
 
     <footer>
         <p><b>© Mohammed Yassine Dabboussi | La Plateforme | 2022-2023</b> </p>
-    </footer> 
+    </footer>
 
 </html>
 

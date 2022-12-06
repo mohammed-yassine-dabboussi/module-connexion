@@ -20,7 +20,7 @@
         <div class="hDroite">
             <div class="bouton_header"><a href="index.php" >Accueil</a></div>
             <div class="bouton_header"><a href="inscription.php" >Inscription</a></div>
-            <div class="bouton_header"><a href="connexion" >Connexion</a></div>
+            <div class="bouton_header"><a href="connexion.php" >Connexion</a></div>
         </div>
     </header>
 
@@ -30,7 +30,7 @@
             <div class="div_milieu"> 
                 <h1>Bienvenue sur notre site</h1>
                 <h2><a a href="inscription.php">&#10148;Inscrivez-vous:</a> </h2>
-                <h2><a a href="connexion">&#10148;Connectez-vous:</a></h2> 
+                <h2><a a href="connexion.php">&#10148;Connectez-vous:</a></h2> 
             </div>
         </div>
     </body> 

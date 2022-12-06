@@ -1,7 +1,7 @@
 <?php 
 session_start();
-$mysqli = new mysqli('localhost', 'root', '', 'moduleconnexion');
-
+// $mysqli = new mysqli('localhost', 'root', '', 'moduleconnexion');
+$mysqli = new mysqli('localhost:3306', 'yassine', 'yassine123', 'mohammed-yassine-dabboussi_moduleconnexion');
 foreach ($_SESSION as $key => $value) {
     $user = $_SESSION['user'][0] ;
 }
@@ -56,7 +56,7 @@ $request = $mysqli -> query("SELECT * FROM `utilisateurs` WHERE `login` = '".$us
                             }
 
                 ?>
-                <h2><a a href="modif_profil">&#10148;Modifiez votre profil:</a></h2> 
+                <h2><a a href="modif_profil.php">&#10148;Modifiez votre profil:</a></h2> 
             </div>
         </div>
     </body> 
